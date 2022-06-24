@@ -1,1 +1,3 @@
-export { WhatsappBot, WhatsappBotOptions } from "./bot";
+import { WhatsappBot } from "./bot";
+
+export default WhatsappBot;
