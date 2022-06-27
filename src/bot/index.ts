@@ -4,11 +4,11 @@ import qrcode from "qrcode-terminal";
 
 type WhatsappBotOptions = {
     clientOptions?: ClientOptions;
-    botOptions: Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
+    botOptions?: Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
 };
 
 export default class WhatsappBot extends Bot<Client, Message> {
-    constructor({ clientOptions, botOptions }: WhatsappBotOptions) {
+    constructor({ clientOptions, botOptions }: WhatsappBotOptions = {}) {
         const client = new Client({
             authStrategy: new LocalAuth(),
             ...clientOptions,
