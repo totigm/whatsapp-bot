@@ -1,13 +1,13 @@
 import { Client, LocalAuth, Message, ClientOptions } from "whatsapp-web.js";
-import { Bot, Options } from "@totigm/bot-builder";
+import Bot, { Options } from "@totigm/bot-builder";
 import qrcode from "qrcode-terminal";
 
-type WhatsappBotOptions = {
+export type WhatsappBotOptions = {
     clientOptions?: ClientOptions;
     botOptions?: Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
 };
 
-export default class WhatsappBot extends Bot<Client, Message> {
+export class WhatsappBot extends Bot<Client, Message> {
     constructor({ clientOptions, botOptions }: WhatsappBotOptions = {}) {
         const client = new Client({
             authStrategy: new LocalAuth(),
@@ -39,6 +39,10 @@ export default class WhatsappBot extends Bot<Client, Message> {
             qrcode.generate(qr, { small: true });
         });
 
-        this.client.initialize().then(() => this.client.sendPresenceUnavailable());
+        this.client.initialize();
+
+        this.client.on("ready", () => {
+            this.client.sendPresenceUnavailable()
+        })
     }
 }
