@@ -1,17 +1,20 @@
 import { Client, LocalAuth, Message, ClientOptions } from "whatsapp-web.js";
-import { Bot, DeepPartial, Options } from "@totigm/bot-builder";
+import { Bot, Options } from "@totigm/bot-builder";
 import qrcode from "qrcode-terminal";
 
-export type WhatsappBotOptions = Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
+type WhatsappBotOptions = {
+    clientOptions?: ClientOptions;
+    botOptions: Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
+};
 
-export class WhatsappBot extends Bot<Client, Message> {
-    constructor(options?: DeepPartial<WhatsappBotOptions>, clientOptions?: ClientOptions) {
+export default class WhatsappBot extends Bot<Client, Message> {
+    constructor({ clientOptions, botOptions }: WhatsappBotOptions) {
         const client = new Client({
             authStrategy: new LocalAuth(),
             ...clientOptions,
         });
         super(client, {
-            ...options,
+            ...botOptions,
             contentProp: "body",
             messageEvent: "message",
             textFormatting: {

@@ -1,3 +1,1 @@
-import { WhatsappBot } from "./bot";
-
-export default WhatsappBot;
+export { default } from "./bot";
