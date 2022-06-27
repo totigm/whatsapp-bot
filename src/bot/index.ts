@@ -36,6 +36,6 @@ export class WhatsappBot extends Bot<Client, Message> {
             qrcode.generate(qr, { small: true });
         });
 
-        this.client.initialize();
+        this.client.initialize().then(() => this.client.sendPresenceUnavailable());
     }
 }
