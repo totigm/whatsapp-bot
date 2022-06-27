@@ -2,7 +2,7 @@ import { Client, LocalAuth, Message } from "whatsapp-web.js";
 import { Bot, DeepPartial, Options } from "@totigm/bot-builder";
 import qrcode from "qrcode-terminal";
 
-export type WhatsappBotOptions = Omit<Options, "textFormatting" | "contentProp">;
+export type WhatsappBotOptions = Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
 
 export class WhatsappBot extends Bot<Client, Message> {
     constructor(options?: DeepPartial<WhatsappBotOptions>) {
@@ -12,6 +12,7 @@ export class WhatsappBot extends Bot<Client, Message> {
         super(client, {
             ...options,
             contentProp: "body",
+            messageEvent: "message",
             textFormatting: {
                 bold: "*",
                 italic: "_",
