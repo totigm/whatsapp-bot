@@ -1,13 +1,9 @@
-import { Client, LocalAuth, Message, ClientOptions } from "whatsapp-web.js";
-import Bot, { Options } from "@totigm/bot-builder";
+import Bot from "@totigm/bot-builder";
 import qrcode from "qrcode-terminal";
+import { Client, LocalAuth, Message } from "whatsapp-web.js";
+import { WhatsappBotOptions } from "../types";
 
-export type WhatsappBotOptions = {
-    clientOptions?: ClientOptions;
-    botOptions?: Omit<Options, "contentProp" | "messageEvent" | "textFormatting">;
-};
-
-export class WhatsappBot extends Bot<Client, Message> {
+export default class WhatsappBot extends Bot<Client, Message> {
     constructor({ clientOptions, botOptions }: WhatsappBotOptions = {}) {
         const client = new Client({
             authStrategy: new LocalAuth(),

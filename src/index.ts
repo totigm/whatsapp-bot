@@ -1,4 +1,6 @@
-import { WhatsappBot, WhatsappBotOptions } from "./bot";
+import WhatsappBot from "./bot";
 
+module.exports = WhatsappBot;
 export default WhatsappBot;
-export { WhatsappBot, WhatsappBotOptions };
+
+export { WhatsappBotOptions } from "./types";
