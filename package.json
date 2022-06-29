@@ -1,17 +1,12 @@
 {
     "name": "@totigm/whatsapp-bot",
-    "version": "0.2.9",
+    "version": "0.3.5",
     "description": "This is a library to create whatsapp bots. It handles all the commands stuff behind the scenes, so you can focus on your bot's logic.",
     "main": "dist/index.js",
     "bin": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "start": "npm run dev",
-        "dev": "nodemon --config nodemon.json src/index.ts",
         "build": "tsc",
-        "prepublish": "npm run build",
-        "preprod": "npm run build",
-        "prod": "set NODE_ENV=prod && node ./dist/index.js",
         "lint": "eslint src && prettier --check src",
         "lint:fix": "eslint src --fix && prettier --write src"
     },
