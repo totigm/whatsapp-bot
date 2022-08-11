@@ -17,7 +17,7 @@
         "prepublishOnly": "npm run lint && npm run prettier && npm run build"
     },
     "dependencies": {
-        "@totigm/bot-builder": "^1.0.0",
+        "@totigm/bot-builder": "^1.0.1",
         "qrcode-terminal": "^0.12.0",
         "whatsapp-web.js": "^1.17.0"
     },
