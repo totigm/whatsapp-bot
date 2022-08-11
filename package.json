@@ -1,43 +1,26 @@
 {
-    "name": "typescript-template",
-    "version": "0.0.1",
-    "description": "This is a template for creating Typescript projects",
+    "name": "@totigm/whatsapp-bot",
+    "version": "0.1.1",
+    "description": "This is a library to create whatsapp bots. It handles all the commands stuff behind the scenes, so you can focus on your bot's logic.",
     "main": "dist/index.js",
     "bin": "dist/index.js",
     "types": "dist/index.d.ts",
+    "files": [
+        "dist/*"
+    ],
     "scripts": {
-        "start": "npm run dev",
-        "dev": "nodemon --config nodemon.json src/index.ts",
-        "build": "tsc",
-        "prepublish": "npm run build",
-        "preprod": "npm run build",
-        "prod": "set NODE_ENV=prod && tsc && node ./dist/index.js",
-        "lint": "eslint src && prettier --check src",
-        "lint:fix": "eslint src --fix && prettier --write src"
+        "build": "tsc"
     },
-    "dependencies": {
-        "dotenv": "^10.0.0",
-        "tslib": "^2.2.0"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/node": "^15.6.1",
-        "@typescript-eslint/eslint-plugin": "^4.25.0",
-        "@typescript-eslint/parser": "^4.25.0",
-        "eslint": "^7.27.0",
-        "eslint-config-airbnb-typescript": "^12.3.1",
-        "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-import": "^2.23.4",
-        "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.4.0",
-        "eslint-plugin-react": "^7.24.0",
-        "nodemon": "^2.0.7",
-        "prettier": "^2.3.0",
         "ts-node": "^10.0.0",
+        "tslib": "^2.4.0",
         "typescript": "^4.3.2"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/totigm/typescript-template.git"
+        "url": "git+https://github.com/totigm/whatsapp-bot.git"
     },
     "keywords": [
         "typescript",
@@ -46,7 +29,7 @@
     "author": "Toti Muñoz",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/totigm/typescript-template/issues"
+        "url": "https://github.com/totigm/whatsapp-bot/issues"
     },
-    "homepage": "https://github.com/totigm/typescript-template#readme"
+    "homepage": "https://github.com/totigm/whatsapp-bot#readme"
 }
