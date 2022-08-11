@@ -10,6 +10,9 @@
   <a href="https://www.npmjs.com/package/@totigm/whatsapp-bot" target="_blank">
     <img alt="Downloads" src="https://img.shields.io/npm/dt/@totigm/whatsapp-bot" />
   </a>
+  <a href="https://github.com/totigm/whatsapp-bot/actions/workflows/main.yml" target="_blank">
+    <img alt="CI" src="https://github.com/totigm/whatsapp-bot/actions/workflows/main.yml/badge.svg" />
+  </a>
   <a href="https://github.com/totigm/whatsapp-bot/stargazers" target="_blank">
     <img alt="GitHub repo stars" src="https://img.shields.io/github/stars/totigm/whatsapp-bot?style=flat">
   </a>
