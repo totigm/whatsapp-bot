@@ -1,3 +1,6 @@
-import config from "./config";
+import WhatsappBot from "./bot";
 
-console.log(`This is the Typescript template at the ${config.node_env} environment`);
+module.exports = WhatsappBot;
+export default WhatsappBot;
+
+export { WhatsappBotOptions } from "./types";

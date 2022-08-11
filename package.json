@@ -15,7 +15,11 @@
         "prettier": "prettier --check src",
         "prettier:fix": "prettier --write src"
     },
-    "dependencies": {},
+    "dependencies": {
+        "@totigm/bot-builder": "^1.0.0",
+        "qrcode-terminal": "^0.12.0",
+        "whatsapp-web.js": "^1.17.0"
+    },
     "devDependencies": {
         "@types/node": "^15.6.1",
         "@typescript-eslint/eslint-plugin": "^5.33.0",
