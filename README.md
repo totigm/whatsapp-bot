@@ -1,65 +1,123 @@
-# Typescript Template
+<h1 align="center">Welcome to <b>@totigm/whatsapp-bot</b> 👋</h1>
 
-This is a template for creating Typescript projects.
+<p>
+  <a href="https://www.npmjs.com/package/@totigm/whatsapp-bot" target="_blank">
+    <img alt="NPM version" src="https://img.shields.io/npm/v/@totigm/whatsapp-bot">
+  </a>
+  <a href="https://github.com/totigm/whatsapp-bot" target="_blank">
+    <img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-%40totigm%2Fbot--builder%20-green">
+  </a>
+  <a href="https://www.npmjs.com/package/@totigm/whatsapp-bot" target="_blank">
+    <img alt="Downloads" src="https://img.shields.io/npm/dt/@totigm/whatsapp-bot" />
+  </a>
+  <a href="https://github.com/totigm/whatsapp-bot/stargazers" target="_blank">
+    <img alt="GitHub repo stars" src="https://img.shields.io/github/stars/totigm/whatsapp-bot?style=flat">
+  </a>
+  <a href="https://github.com/totigm/whatsapp-bot#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen" />
+  </a>
+  <a href="https://github.com/totigm/whatsapp-bot/blob/main/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/totigm/whatsapp-bot" />
+  </a>
+</p>
 
-This template will help you start a Typescript project without needing to worry about any configuration.
+## 📄 Introduction
 
-## 📋 Prerequisites
+This is a library to create WhatsApp bots. It is a WhatsApp implementation of the [@totigm/bot-builder](https://www.npmjs.com/package/@totigm/bot-builder) package, which handles all the commands stuff behind the scenes, so you can focus on your bot's logic.
 
--   [**Node.js**](https://nodejs.org): You need to have Node.js installed on your computer to run this bot. You can download it [here](https://nodejs.org/en/download).
+## 🔗 Quick links
 
-## Available Scripts
+- [Reference documentation](./docs/reference.md)
+- [Bot options](./docs/bot-options.md)
+- [Bot builder](https://www.npmjs.com/package/@totigm/bot-builder)
+- [Discord bot](https://www.npmjs.com/package/@totigm/discord-bot)
+- [GitHub](https://github.com/totigm/whatsapp-bot#readme)
+- [NPM](https://www.npmjs.com/package/@totigm/whatsapp-bot)
 
-In the project directory, you can run:
+## 💻 Installation
 
-### `yarn` or `npm i`
+```sh
+npm i @totigm/whatsapp-bot
+```
 
-Installs every dependency needed for the project.
+or
 
-### `yarn start` or `npm start`
+```sh
+yarn add @totigm/whatsapp-bot
+```
 
-Runs the app in the development mode.\
-The app will reload every time you save a file.
+## 🚀 Getting started
 
-You will also see any lint errors/warnings in the console.
+Start adding commands to your bot by checking the [reference documentation](./docs/reference.md).
 
-> _`yarn dev` and `npm run dev` do the same._
+## 🤖 Example usage
 
-### `yarn build` or `npm run build`
+```ts
+import WhatsappBot from "@totigm/whatsapp-bot";
 
-Builds the app for production to the `build` folder.
+const bot = new WhatsappBot();
 
-Your app is ready to be deployed!
+bot.addCommand(
+    "hi",
+    async (message, client) => {
+        const chatId = message.from;
+        const contact = await client.getContactById(chatId);
 
-> _`yarn prod` and `npm run prod` do the same, and also run the app after building it._
+        return `Hello ${contact.pushname}!`;
+    },
+    {
+        description: "Say hi",
+        explanation: "The bot will say hi to you using your WhatsApp's name",
+        example: {
+            output: "Hi Toti! How are you doing?",
+        },
+    },
+);
+```
 
-### `yarn lint` or `npm run lint`
+## ⚙️ Options
 
-Runs the linter and logs every error and warning to the console.
+When you create a bot, you can pass an options object to customize it. Check its [options](./docs/options.md) documentation for more information.
 
-> _`yarn lint:fix` and `npm run lint:fix` fix every autofixable error/warning._
+```ts
+const options = { ... };
 
+const bot = new WhatsappBot(options);
+```
 
-### `yarn publish` or `npm publish`
+## 👤 Author
 
-Publish your app to [npm](https://www.npmjs.com).
+<a href="https://github.com/totigm" target="_blank">
+  <img alt="GitHub: totigm" src="https://img.shields.io/github/followers/totigm?label=Follow @totigm&style=social">
+</a>
+<br>
+<a href="https://twitter.com/totigm8" target="_blank">
+  <img alt="Twitter: totigm8" src="https://img.shields.io/twitter/follow/totigm8?style=social" />
+</a>
+<br>
+<a href="https://linkedin.com/in/totigm" target="_blank">
+  <img alt="LinkedIn: totigm" src="https://img.shields.io/badge/LinkedIn-%40totigm-green?style=social&logo=linkedin" />
+</a>
+<br>
+<a href="https://www.npmjs.com/~totigm" target="_blank">
+  <img alt="NPM: totigm" src="https://img.shields.io/badge/NPM-%40totigm-green?style=social&logo=npm" />
+</a>
 
-> Check your `package.json` to update its properties.
-
-## ✨ Contributing
+## 🤝 Contributing
 
 Contributions are more than welcome!
 
-We think that you might have great ideas to make this project even better, so if you do, please create a pull request and/or issue following our [contribution guidelines](./docs/CONTRIBUTING.md).
+We think that you might have great ideas to make this project even better. If you do, please create a pull request and/or issue following the [contribution guidelines](./docs/CONTRIBUTING.md).
 
-## 😃 Author
+## ⭐️ Show your support
 
-[TotiGM](https://github.com/totigm)
+Give a ⭐️ if this project helped you!
 
-## 📄 License
+## 📝 License
 
-[MIT](./LICENSE)
+Copyright © 2022 [Toti Muñoz](https://github.com/totigm).<br />
+This project is [MIT](https://github.com/totigm/bot-builder/blob/master/LICENSE) licensed.
 
-<hr />
+---
 
 This project was made with ❤ and TypeScript
