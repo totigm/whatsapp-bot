@@ -11,7 +11,9 @@
     "scripts": {
         "build": "tsc",
         "lint": "eslint src",
-        "lint:fix": "eslint src --fix"
+        "lint:fix": "eslint src --fix",
+        "prettier": "prettier --check src",
+        "prettier:fix": "prettier --write src"
     },
     "dependencies": {},
     "devDependencies": {
@@ -19,6 +21,9 @@
         "@typescript-eslint/eslint-plugin": "^5.33.0",
         "@typescript-eslint/parser": "^5.33.0",
         "eslint": "^8.21.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.7.1",
         "ts-node": "^10.0.0",
         "tslib": "^2.4.0",
         "typescript": "^4.3.2"
