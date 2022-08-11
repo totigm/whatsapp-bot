@@ -18,7 +18,11 @@ export default class WhatsappBot extends Bot<Client, Message> {
     }
 
     protected auth() {
+        this.client.initialize();
+
         this.client.on("authenticated", () => {
+            this.client.sendPresenceUnavailable();
+
             console.log("Authenticated");
         });
 
@@ -28,12 +32,6 @@ export default class WhatsappBot extends Bot<Client, Message> {
 
         this.client.on("qr", (qr) => {
             qrcode.generate(qr, { small: true });
-        });
-
-        this.client.initialize();
-
-        this.client.on("ready", () => {
-            this.client.sendPresenceUnavailable();
         });
     }
 }
