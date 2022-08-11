@@ -5,7 +5,7 @@
         "project": "./tsconfig.json"
     },
     "plugins": ["@typescript-eslint"],
-    "extends": ["airbnb-typescript", "prettier"],
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
     "rules": {
         "no-console": "off",
         "@typescript-eslint/lines-between-class-members": "off",
