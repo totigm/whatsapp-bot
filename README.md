@@ -5,7 +5,7 @@
     <img alt="NPM version" src="https://img.shields.io/npm/v/@totigm/whatsapp-bot">
   </a>
   <a href="https://github.com/totigm/whatsapp-bot" target="_blank">
-    <img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-%40totigm%2Fbot--builder%20-green">
+    <img alt="GitHub repo" src="https://img.shields.io/badge/GitHub-@totigm/whatsapp--bot-green?style=flat&logo=github">
   </a>
   <a href="https://www.npmjs.com/package/@totigm/whatsapp-bot" target="_blank">
     <img alt="Downloads" src="https://img.shields.io/npm/dt/@totigm/whatsapp-bot" />
@@ -119,7 +119,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2022 [Toti Muñoz](https://github.com/totigm).<br />
-This project is [MIT](https://github.com/totigm/bot-builder/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/totigm/whatsapp-bot/blob/master/LICENSE) licensed.
 
 ---
 
