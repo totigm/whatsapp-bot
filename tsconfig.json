@@ -18,7 +18,7 @@
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "moduleResolution": "node",
-        "baseUrl": ".",
+        "baseUrl": "./src",
         "allowSyntheticDefaultImports": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
@@ -27,8 +27,8 @@
         "types": ["node"],
         "paths": {
             "@src/*": ["./*"],
-            "@types/*": ["./src/types/*"],
-            "@bot/*": ["./src/bot/*"]
+            "@types/*": ["./types/*"],
+            "@bot/*": ["./bot/*"]
         },
         "lib": [
             "es5",
