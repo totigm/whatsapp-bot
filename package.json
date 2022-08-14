@@ -14,7 +14,9 @@
         "lint:fix": "eslint src --fix",
         "prettier": "prettier --check src",
         "prettier:fix": "prettier --write src",
-        "prepublishOnly": "npm run lint && npm run prettier && npm run build"
+        "check": "npm run lint && npm run prettier",
+        "check:fix": "npm run lint:fix && npm run prettier:fix",
+        "prepublishOnly": "npm run check && npm run build"
     },
     "dependencies": {
         "@totigm/bot-builder": "^1.0.1",
