@@ -61,22 +61,26 @@ import WhatsappBot from "@totigm/whatsapp-bot";
 const bot = new WhatsappBot();
 
 bot.addCommand(
-    "hi",
+    "hey",
     async (message, client) => {
         const chatId = message.from;
         const contact = await client.getContactById(chatId);
 
-        return `Hello ${contact.pushname}!`;
+        return `Hey ${contact.pushname}! How are you doing?`;
     },
     {
-        description: "Say hi",
-        explanation: "The bot will say hi to you using your WhatsApp's name",
+        description: "Say hey",
+        explanation: "The bot will say hey to the user using their WhatsApp's name",
         example: {
-            output: "Hi Toti! How are you doing?",
+            output: "Hey Toti! How are you doing?",
         },
     },
 );
 ```
+
+The previous code will create a bot that works like this:
+
+![bot conversation](https://user-images.githubusercontent.com/64804554/184542132-4f6ef2ec-0a57-43f2-9f86-6cc0bebcbdd4.png)
 
 ## ⚙️ Options
 
