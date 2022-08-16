@@ -1,6 +1,6 @@
 {
     "name": "@totigm/whatsapp-bot",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "This is a library to create whatsapp bots. It handles all the commands stuff behind the scenes, so you can focus on your bot's logic.",
     "main": "dist/index.js",
     "bin": "dist/index.js",
@@ -19,7 +19,7 @@
         "prepublishOnly": "npm run check && npm run build"
     },
     "dependencies": {
-        "@totigm/bot-builder": "^1.0.2",
+        "@totigm/bot-builder": "^1.0.3",
         "qrcode-terminal": "^0.12.0",
         "whatsapp-web.js": "^1.17.0"
     },
