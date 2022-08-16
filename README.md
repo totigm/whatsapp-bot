@@ -31,7 +31,7 @@ This is a library to create WhatsApp bots. It is a WhatsApp implementation of th
 ## 🔗 Quick links
 
 - [Reference documentation](./docs/reference.md)
-- [Bot options](./docs/bot-options.md)
+- [Options](#⚙️-options)
 - [Bot builder](https://www.npmjs.com/package/@totigm/bot-builder)
 - [Discord bot](https://www.npmjs.com/package/@totigm/discord-bot)
 - [GitHub](https://github.com/totigm/whatsapp-bot#readme)
