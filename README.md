@@ -80,7 +80,7 @@ bot.addCommand(
 
 The previous code will create a bot that works like this:
 
-![bot conversation](https://user-images.githubusercontent.com/64804554/184542132-4f6ef2ec-0a57-43f2-9f86-6cc0bebcbdd4.png)
+![bot conversation](https://user-images.githubusercontent.com/64804554/185178533-e8a55768-499b-4c78-bdb1-51766f572d51.png)
 
 ## ⚙️ Options
 
