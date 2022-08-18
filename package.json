@@ -19,7 +19,7 @@
         "prepublishOnly": "npm run check && npm run build"
     },
     "dependencies": {
-        "@totigm/bot-builder": "^1.0.5",
+        "@totigm/bot-builder": "^1.1.0",
         "qrcode-terminal": "^0.12.0",
         "whatsapp-web.js": "^1.17.0"
     },
