@@ -89,7 +89,7 @@ Short description of the command. It will be listed on the general `help` comman
 
 For example, the `ping` command's description is: `Ping the bot`
 
-![general help message](https://user-images.githubusercontent.com/64804554/183616403-68b5d012-5f63-4a21-93a3-d04567ca7c7f.png)
+![general help message](https://user-images.githubusercontent.com/64804554/185166269-56c53425-5344-4e6a-bec5-401eaf1d93b0.png)
 
 - Value type: `string`
 
@@ -99,7 +99,7 @@ Longer explanation of the command. It will be listed on the specific `help` comm
 
 For example, the `ping` command's explanation is: `This command is used to ping the bot in order to check if it is working`
 
-![specific command help message](https://user-images.githubusercontent.com/64804554/183637354-8bf79b27-2354-42aa-ba77-64bf350a54e5.png)
+![specific command help message](https://user-images.githubusercontent.com/64804554/185464037-c98ad2a4-203f-4e85-b0c1-6748113c8d63.png)
 
 - Value type: `string`
 
@@ -111,15 +111,15 @@ Both the input and the output are optional.
 
 In this case, the `input` is empty, and the `output` is `pong`.
 
-![example without input](https://user-images.githubusercontent.com/64804554/183637354-8bf79b27-2354-42aa-ba77-64bf350a54e5.png)
+![example without input](https://user-images.githubusercontent.com/64804554/185464251-8dc04f7a-df5b-4441-97fe-795f710fb31f.png)
 
 In this one, the `input` is `test`, and the `output` is still `pong`.
 
-![example with input and output](https://user-images.githubusercontent.com/64804554/183638122-fb4257ce-f1db-483e-918c-5b1851ce3328.png)
+![example with input and output](https://user-images.githubusercontent.com/64804554/185464342-15402ac2-54cb-4df0-8e7b-fdadfdf5cb32.png)
 
 Last, but not least, in this case, the `input` is `test`, and the `output` is empty.
 
-![example without output](https://user-images.githubusercontent.com/64804554/183638487-eaba33c6-9b21-4e31-8cb4-ce47daaad80c.png)
+![example without output](https://user-images.githubusercontent.com/64804554/185464488-3bda788e-ef0a-487d-a897-1bd542c33274.png)
 
 
 - Value type: `Object`
