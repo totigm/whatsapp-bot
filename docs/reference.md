@@ -30,7 +30,7 @@ The name of the command. This is the name that the user will have to type to exe
 ## handler
 
 This is a function that will be executed when the user types the command name followed by the bot symbol.
-The [`Message`](#message) and [`Client`](#client) types are based on the [whatsapp-web.js](https://wwebjs.dev) libray
+The [`Message`](#message) and [`Client`](#client) types are based on the [whatsapp-web.js](https://wwebjs.dev) libray.
 
 If there is, the returned value will be sent to the user as a message. If not, nothing will be sent.
 

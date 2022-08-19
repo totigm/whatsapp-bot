@@ -28,10 +28,13 @@
 
 This is a library to create WhatsApp bots. It is a WhatsApp implementation of the [@totigm/bot-builder](https://www.npmjs.com/package/@totigm/bot-builder) package, which handles all the commands stuff behind the scenes, so you can focus on your bot's logic.
 
+> The [whatsapp-web.js](https://wwebjs.dev) library is used for this implementation.
+
 ## 🔗 Quick links
 
 - [Reference documentation](./docs/reference.md)
 - [Options](#⚙️-options)
+- [Whatsapp-web.js docs](https://wwebjs.dev/guide)
 - [Bot builder](https://www.npmjs.com/package/@totigm/bot-builder)
 - [Discord bot](https://www.npmjs.com/package/@totigm/discord-bot)
 - [GitHub](https://github.com/totigm/whatsapp-bot#readme)
