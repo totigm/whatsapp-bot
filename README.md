@@ -95,6 +95,12 @@ const options = { ... };
 const bot = new WhatsappBot(options);
 ```
 
+## 🚀 Deploying
+
+To deploy your WhatsApp bot, check out [this template](https://github.com/totigm/whatsapp-bot-template), which creates a [Docker](https://www.docker.com) image with everything needed for the [whatsapp-web.js](https://wwebjs.dev) library to work. This will help you to deploy your bot to the cloud provider of your choice.
+
+This library automatically checks if the app is being run on a [Docker](https://www.docker.com) container and set its configurations according to that, so you don't have to worry about it.
+
 ## 👤 Author
 
 <a href="https://github.com/totigm" target="_blank">
