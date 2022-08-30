@@ -85,6 +85,10 @@ The previous code will create a bot that works like this:
 
 ![bot conversation](https://user-images.githubusercontent.com/64804554/185178533-e8a55768-499b-4c78-bdb1-51766f572d51.png)
 
+## 🤩 Bot examples
+
+- [WhatsApp stickers bot](https://github.com/totigm/whatsapp-stickers-bot): WhatsApp bot that converts images and videos to stickers.
+
 ## ⚙️ Options
 
 When you create a bot, you can pass an options object to customize it. Check its [options](./docs/options.md) documentation for more information.
