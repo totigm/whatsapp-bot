@@ -54,7 +54,12 @@ yarn add @totigm/whatsapp-bot
 
 ## 🚀 Getting started
 
+You can use this [WhatsApp bot template](https://github.com/totigm/whatsapp-bot-template) to [generate your own](https://github.com/totigm/whatsapp-bot-template/generate). This template has everything set up for you, so you can start coding your bot right away.\
+The template has TypeScript, Docker, ESLint, and Prettier already configured, so you have a nice developer experience and a production-ready bot.
+
 Start adding commands to your bot by checking the [reference documentation](./docs/reference.md).
+
+> The [WhatsApp bot template](https://github.com/totigm/whatsapp-bot-template) and [bot examples](#-bot-examples) are also a good reference on how to use this library.
 
 ## 🤖 Example usage
 
