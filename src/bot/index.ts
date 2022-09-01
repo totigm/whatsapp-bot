@@ -14,7 +14,7 @@ export default class WhatsappBot extends Bot<Client, Message> {
             },
         };
 
-        const isDockerContainer = fs.existsSync("/.dockerenv");
+        const isDockerContainer = fs.existsSync("/.dockerenv") || process.env.IS_DOCKER_CONTAINER === "true";
 
         const clientOptions = {
             authStrategy: new LocalAuth(),
