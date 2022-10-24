@@ -22,7 +22,7 @@
         "@totigm/bot-builder": "^1.1.1",
         "qrcode-terminal": "^0.12.0",
         "tslib": "^2.4.0",
-        "whatsapp-web.js": "^1.17.0"
+        "whatsapp-web.js": "^1.18.0"
     },
     "devDependencies": {
         "@types/node": "^15.6.1",
