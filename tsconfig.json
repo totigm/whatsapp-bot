@@ -24,11 +24,19 @@
         "emitDecoratorMetadata": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "types": ["node"],
+        "types": [
+            "node"
+        ],
         "paths": {
-            "@src/*": ["./*"],
-            "@types/*": ["./types/*"],
-            "@bot/*": ["./bot/*"]
+            "@src/*": [
+                "./*"
+            ],
+            "@types/*": [
+                "./types/*"
+            ],
+            "@bot/*": [
+                "./bot/*"
+            ]
         },
         "lib": [
             "es5",
@@ -44,9 +52,13 @@
             "es2015.symbol",
             "es2015.symbol.wellknown",
             "esnext.asynciterable",
-            "esnext"
+            "esnext",
+            "dom.iterable",
+            "scripthost"
         ]
     },
     "compileOnSave": true,
-    "include": ["src"]
+    "include": [
+        "src"
+    ]
 }
