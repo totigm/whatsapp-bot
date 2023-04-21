@@ -53,8 +53,7 @@
             "es2015.symbol.wellknown",
             "esnext.asynciterable",
             "esnext",
-            "dom.iterable",
-            "scripthost"
+            "dom.iterable"
         ]
     },
     "compileOnSave": true,
