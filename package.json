@@ -9,7 +9,7 @@
         "dist/*"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "tsc --skipLibCheck",
         "lint": "eslint src",
         "lint:fix": "eslint src --fix",
         "prettier": "prettier --check src",
