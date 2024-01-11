@@ -3,4 +3,7 @@ import WhatsappBot from "./bot";
 module.exports = WhatsappBot;
 export default WhatsappBot;
 
-export { WhatsappBotOptions } from "./types";
+export * from "./types";
+
+import * as WhatsappWeb from "whatsapp-web.js";
+export { WhatsappWeb };
