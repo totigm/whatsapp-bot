@@ -1,7 +1,12 @@
 import WhatsappBot from "./bot";
-export default WhatsappBot;
+import { useMultiFileAuthState } from "@whiskeysockets/baileys";
 
-export * from "./types";
+async function main() {
+    const creds = await useMultiFileAuthState("auth_info_baileys");
 
-import WAWebJS from "whatsapp-web.js";
-export { WAWebJS };
+    new WhatsappBot({
+        creds,
+    });
+}
+
+main();

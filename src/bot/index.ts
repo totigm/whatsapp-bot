@@ -1,50 +1,55 @@
 import Bot from "@totigm/bot-builder";
-import qrcode from "qrcode-terminal";
-import { Client, LocalAuth, Message } from "whatsapp-web.js";
 import { WhatsappBotOptions } from "../types";
-import fs from "fs";
+import makeWASocket, { DisconnectReason } from "@whiskeysockets/baileys";
+import { Boom } from "@hapi/boom";
+import { EventEmitter } from "events";
 
-export default class WhatsappBot extends Bot<Client, Message> {
-    // Add auth options with clientId (see https://wwebjs.dev/guide/authentication.html#multiple-sessions)
-    constructor(options: WhatsappBotOptions = {}) {
-        const dockerOptions = {
-            puppeteer: {
-                executablePath: process.env.CHROME_BIN ?? "/usr/bin/chromium-browser",
-                args: ["--no-sandbox"],
-            },
-        };
+export default class WhatsappBot extends Bot {
+    private socket: ReturnType<typeof makeWASocket>;
 
-        const isDockerContainer = fs.existsSync("/.dockerenv") || process.env.IS_DOCKER_CONTAINER === "true";
+    constructor(options: WhatsappBotOptions) {
+        const { state, saveCreds } = options.creds;
+        const socket = makeWASocket({
+            printQRInTerminal: true,
+            auth: state,
+        });
 
-        const clientOptions = {
-            authStrategy: new LocalAuth(),
-            ...(isDockerContainer ? dockerOptions : {}),
-            ...options.client,
-        };
-
-        const client = new Client(clientOptions);
-        super(client, {
+        const emitter = new EventEmitter();
+        super(socket.ev as unknown as typeof emitter, {
             contentProp: "body",
             messageEvent: "message",
             ...options.bot,
         });
+
+        socket.ev.on("creds.update", saveCreds);
+
+        this.socket = socket;
     }
 
     protected auth() {
-        this.client.initialize();
-
-        this.client.on("authenticated", () => {
-            this.client.sendPresenceUnavailable();
-
-            console.log("Authenticated");
+        this.client.on("connection.update", (update) => {
+            const { connection, lastDisconnect } = update;
+            if (connection === "close") {
+                const shouldReconnect = (lastDisconnect.error as Boom)?.output?.statusCode !== DisconnectReason.loggedOut;
+                console.log("connection closed due to ", lastDisconnect.error, ", reconnecting ", shouldReconnect);
+                // reconnect if not logged out
+                if (shouldReconnect) {
+                    this.socket = makeWASocket({
+                        printQRInTerminal: true,
+                        auth: null,
+                    });
+                    this.auth();
+                }
+            } else if (connection === "open") {
+                console.log("opened connection");
+            }
         });
 
-        this.client.on("auth_failure", (msg) => {
-            console.error("Auth failed", msg);
-        });
+        this.client.on("messages.upsert", async (m) => {
+            console.log(JSON.stringify(m, undefined, 2));
 
-        this.client.on("qr", (qr) => {
-            qrcode.generate(qr, { small: true });
+            console.log("replying to", m.messages[0].key.remoteJid);
+            await this.socket.sendMessage(m.messages[0].key.remoteJid!, { text: "Hello there!" });
         });
     }
 }

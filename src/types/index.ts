@@ -1,5 +1,5 @@
-import { ClientOptions } from "whatsapp-web.js";
 import { Options as BotBuilderOptions } from "@totigm/bot-builder";
+import { AuthenticationState } from "@whiskeysockets/baileys";
 
 export * from "@totigm/bot-builder";
 
@@ -8,6 +8,9 @@ type BotOptions = Omit<BotBuilderOptions, "contentProp" | "textFormatting" | "au
 };
 
 export type WhatsappBotOptions = {
-    client?: ClientOptions;
     bot?: BotOptions;
+    creds: {
+        state: AuthenticationState;
+        saveCreds: () => Promise<void>;
+    };
 };
